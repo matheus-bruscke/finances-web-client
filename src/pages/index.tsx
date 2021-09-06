@@ -1,5 +1,6 @@
+import { Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-const HomePage: NextPage = () => <h1>hello fucking world</h1>;
+const HomePage: NextPage = () => <Heading>hello teste</Heading>;
 
 export default HomePage;
