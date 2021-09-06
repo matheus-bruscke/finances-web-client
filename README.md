@@ -17,10 +17,6 @@ yarn install
 yarn dev
 ```
 
-### Backend
-
-_the backend instructions goes here_
-
 ## 🤝 Collaborators
 
 This application is a study project developed by:
