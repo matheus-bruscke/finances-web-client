@@ -1,5 +1,5 @@
 <p>
-<img src="./public/finances_logo.png" alt="Finances" width="180">
+<img src="./public/assets/app-logo.svg" alt="Finances" width="180">
 </p>
 
 > Finances is a web application developed with modern techs like Next.js and Java Spring where you can controll and mesure your expenses and earns over a given period. 
