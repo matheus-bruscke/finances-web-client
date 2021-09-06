@@ -1,7 +1,10 @@
+import { useDisclosureContext } from '@/hooks/contexts';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Flex, Image, IconButton } from '@chakra-ui/react';
 
 export const AppHeader = () => {
+  const { onOpen } = useDisclosureContext();
+
   return (
     <Flex
       alignItems="center"
@@ -23,6 +26,7 @@ export const AppHeader = () => {
           aria-label="Menu"
           size="lg"
           rounded="full"
+          onClick={onOpen}
           bg="gray.900"
         />
       </Flex>
