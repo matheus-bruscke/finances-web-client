@@ -1,0 +1,13 @@
+{
+  "name": "finances-web-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MatheusLittig/finances-web-client.git",
+  "author": "MatheusLittig <littig.works@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
+  }
+}
