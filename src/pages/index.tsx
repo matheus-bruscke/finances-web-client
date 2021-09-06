@@ -1,6 +1,5 @@
-import { Heading } from '@chakra-ui/react';
-import { NextPage } from 'next';
+import { HomeView } from '@/views';
 
-const HomePage: NextPage = () => <Heading>hello teste</Heading>;
+const HomePage = () => <HomeView />;
 
 export default HomePage;
