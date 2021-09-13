@@ -6,15 +6,7 @@ import {
   Server,
 } from 'miragejs';
 import faker from 'faker';
-
-type PaymentMethod = 'credit_card' | 'billet' | 'pix' | 'cash';
-
-type Transaction = {
-  ammount: number;
-  description: string;
-  pay_method: PaymentMethod | string;
-  date: string | Date;
-};
+import { PaymentMethod, Transaction } from '@/types';
 
 export const makeServer = (): Server => {
   const server = createServer({
@@ -60,7 +52,10 @@ export const makeServer = (): Server => {
       this.timing = 750;
 
       this.get('/transactions', schema => {
-        return schema.all('transaction');
+        const response = schema.all('transaction');
+        const { models } = response;
+
+        return models;
       });
     },
   });

@@ -1,13 +1,19 @@
 import { PageTemplate } from '@/components/templates';
-import { api } from '@/services/apis';
+import { useTransactions } from '@/services/server';
+import { Transaction } from '@/types';
 import { Heading } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const HomeView = () => {
+  const { getTransactions } = useTransactions();
+  const [transactions, setTransactions] = useState<Transaction[]>();
+
   useEffect(() => {
-    const response = api.get('/transactions').then(res => res.data);
-    console.log(response);
+    getTransactions().then(setTransactions);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log(transactions);
 
   return (
     <PageTemplate title="Home">
