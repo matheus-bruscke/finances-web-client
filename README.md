@@ -33,7 +33,7 @@ This application is a study project developed by:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG8qDY-WXPUBA/profile-displayphoto-shrink_200_200/0/1597628143803?e=1634774400&v=beta&t=2tsYJI1nq1fjxzPhPW4DUHZiMmOaUwx5aCw5ZvXqSkE" width="100px"; alt="Matheus Littig" /><br>
+        <img src="https://avatars.githubusercontent.com/u/53308182?v=4" width="100px"; alt="Matheus Littig" /><br>
         <sub>
           <b>Matheus Littig</b>
         </sub>
