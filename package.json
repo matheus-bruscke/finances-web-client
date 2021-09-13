@@ -14,6 +14,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@types/faker": "^5.5.8",
     "@types/react": "^17.0.20",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
@@ -30,6 +31,7 @@
     "@chakra-ui/react": "^1.6.7",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "axios": "^0.21.4",
     "framer-motion": "^4",
     "next": "^11.1.2",
     "react": "^17.0.2",
