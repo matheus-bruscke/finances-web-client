@@ -1,26 +1,25 @@
 import { PeriodSelector } from '@/components/elements';
 import { PageTemplate } from '@/components/templates';
-import { Period } from '@/types';
+import { Flex } from '@chakra-ui/react';
+import { periods } from '@/constants';
+import { Notifications } from './components';
 
 export const HomeView = () => {
-  const periods: Period[] = [
-    {
-      key: 'day',
-      value: 'Day',
-    },
-    {
-      key: 'month',
-      value: 'Month',
-    },
-    {
-      key: 'year',
-      value: 'Year',
-    },
-  ];
-
   return (
     <PageTemplate title="Home">
-      <PeriodSelector periods={periods} />
+      <Flex align="center" justify="space-between">
+        <PeriodSelector periods={periods} />
+        <Notifications
+          list={[
+            {
+              new: true,
+              thumb: 'random thumb',
+              time: '2 days ago',
+              title: 'Title test of notification',
+            },
+          ]}
+        />
+      </Flex>
     </PageTemplate>
   );
 };
