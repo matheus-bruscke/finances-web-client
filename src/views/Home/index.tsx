@@ -1,23 +1,26 @@
+import { PeriodSelector } from '@/components/elements';
 import { PageTemplate } from '@/components/templates';
-import { useTransactions } from '@/services/server';
-import { Transaction } from '@/types';
-import { Heading } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { Period } from '@/types';
 
 export const HomeView = () => {
-  const { getTransactions } = useTransactions();
-  const [transactions, setTransactions] = useState<Transaction[]>();
-
-  useEffect(() => {
-    getTransactions().then(setTransactions);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  console.log(transactions);
+  const periods: Period[] = [
+    {
+      key: 'day',
+      value: 'Day',
+    },
+    {
+      key: 'month',
+      value: 'Month',
+    },
+    {
+      key: 'year',
+      value: 'Year',
+    },
+  ];
 
   return (
     <PageTemplate title="Home">
-      <Heading>hello teste</Heading>
+      <PeriodSelector periods={periods} />
     </PageTemplate>
   );
 };

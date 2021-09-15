@@ -7,7 +7,9 @@ export const darkTheme = extendTheme({
   colors: {
     gray: {
       900: '#151515',
+      800: '#141416',
       700: '#242424',
+      600: '#828282',
     },
   },
   fonts: {
