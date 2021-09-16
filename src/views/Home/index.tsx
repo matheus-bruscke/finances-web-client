@@ -1,12 +1,16 @@
 import { PageTemplate } from '@/components/templates';
-import { Flex, Heading } from '@chakra-ui/react';
+import { Stack, Heading } from '@chakra-ui/react';
+import { UserBalance } from './components';
 
 export const HomeView = () => {
   return (
     <PageTemplate title="Home">
-      <Flex align="center" justify="space-between">
+      <Stack spacing={5}>
         <Heading>Home</Heading>
-      </Flex>
+        <UserBalance
+          amount={{ balance: 4724.71, entries: 2547.92, exits: 1563.83 }}
+        />
+      </Stack>
     </PageTemplate>
   );
 };

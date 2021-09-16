@@ -11,6 +11,10 @@ export const darkTheme = extendTheme({
       700: '#242424',
       600: '#828282',
     },
+    low_scale: {
+      red: '#2a1c1c',
+      green: '#172922',
+    },
   },
   fonts: {
     heading: 'Inter',
