@@ -1,3 +1,3 @@
 export * from './transaction';
 export * from './payment-method';
-export * from './period';
+export * from './selector';

@@ -11,20 +11,28 @@ import {
   MenuButton,
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { usePeriodContext } from '@/hooks/contexts/use-period';
-import { Period } from '@/types';
+import { useSelectorContext } from '@/hooks/contexts/use-selector';
+import { SelectOptions } from '@/types';
+import { useState } from 'react';
 
 interface PeriodSelector {
-  periods: Period[];
+  title: string;
+  options: SelectOptions[];
 }
 
-export const PeriodSelector = ({ periods }: PeriodSelector) => {
-  const { onChangePeriod, currentPeriod } = usePeriodContext();
+type CurrentOption = {
+  title: string;
+  color: string | undefined;
+};
+
+export const Select = ({ options, title }: PeriodSelector) => {
+  const { onChangeCurrentOptions, currentOptions } = useSelectorContext();
+  const [currentOption, setCurrentOption] = useState<CurrentOption>();
 
   return (
     <Box>
       <Heading fontSize="1.5rem" fontWeight="semibold">
-        Period
+        {title}
       </Heading>
 
       <Menu autoSelect={false}>
@@ -34,14 +42,16 @@ export const PeriodSelector = ({ periods }: PeriodSelector) => {
           ml="-1.5rem"
           fontSize="4xl"
           fontWeight="bold"
-          p="2rem 1.5rem"
+          p="1.5rem"
           borderRadius="full"
           color="blue.500"
-          _active={{ bg: 'black' }}
+          _active={{ bg: { base: 'none' } }}
           _hover={{ bg: 'black' }}
         >
           <Stack direction="row" spacing={5} align="center">
-            <Text>{currentPeriod || periods[0].value}</Text>
+            <Text color={currentOption?.color}>
+              {currentOption?.title || options[0].value}
+            </Text>
             <Flex
               as="span"
               w="2rem"
@@ -60,18 +70,24 @@ export const PeriodSelector = ({ periods }: PeriodSelector) => {
         </MenuButton>
 
         <MenuList borderRadius="25px" ml={4} w="100x">
-          {periods.map(period => (
+          {options.map(item => (
             <MenuItem
-              key={period.key}
+              key={item.key}
               fontSize="3xl"
-              color={currentPeriod === period.value ? 'white' : 'gray.600'}
+              color={currentOption?.title === item.value ? 'white' : 'gray.600'}
               fontWeight="bold"
-              onClick={() => onChangePeriod(period.value)}
+              onClick={() => {
+                onChangeCurrentOptions(title, item.value);
+                return setCurrentOption({
+                  title: item.value,
+                  color: item.color,
+                });
+              }}
               transition="color 0.3s"
               _active={{ bg: 'none' }}
               _hover={{ bg: 'none', color: 'white' }}
             >
-              {period.value}
+              {item.value}
             </MenuItem>
           ))}
         </MenuList>

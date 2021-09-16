@@ -1,2 +1,2 @@
-export * from './period-selector';
+export * from './select';
 export * from './notifications';
