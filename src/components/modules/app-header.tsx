@@ -1,6 +1,7 @@
 import { useDisclosureContext } from '@/hooks/contexts';
+import { Notifications } from '../elements/notifications';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Flex, Image, IconButton } from '@chakra-ui/react';
+import { Flex, Image, IconButton, Stack } from '@chakra-ui/react';
 
 export const AppHeader = () => {
   const { onOpen } = useDisclosureContext();
@@ -21,14 +22,27 @@ export const AppHeader = () => {
       >
         <Image src="/assets/app-logo.svg" alt="Finances" />
 
-        <IconButton
-          icon={<HamburgerIcon />}
-          aria-label="Menu"
-          size="lg"
-          rounded="full"
-          onClick={onOpen}
-          bg="gray.900"
-        />
+        <Stack direction="row" spacing={2} align="center">
+          <Notifications
+            list={[
+              {
+                new: true,
+                thumb: 'random thumb',
+                time: '8 hours ago',
+                title: 'Example of notification',
+              },
+            ]}
+          />
+          <IconButton
+            icon={<HamburgerIcon />}
+            aria-label="Menu"
+            size="lg"
+            rounded="full"
+            fontSize="1.5rem"
+            onClick={onOpen}
+            bg="gray.900"
+          />
+        </Stack>
       </Flex>
     </Flex>
   );

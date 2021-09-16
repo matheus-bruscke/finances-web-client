@@ -10,7 +10,13 @@ import {
   MenuItem,
   IconButton,
 } from '@chakra-ui/react';
-import { NotificationsList } from '../types';
+
+type NotificationsList = {
+  thumb: string;
+  title: string;
+  time: string;
+  new: boolean;
+};
 
 interface Notifications {
   list: NotificationsList[];
@@ -25,6 +31,7 @@ export const Notifications = ({ list }: Notifications) => {
         h="55px"
         fontSize="1.5rem"
         icon={<BellIcon />}
+        bg="transparent"
         borderRadius="full"
       />
       <MenuList mt={5}>
