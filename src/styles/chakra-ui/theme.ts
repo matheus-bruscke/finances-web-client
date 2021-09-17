@@ -14,6 +14,10 @@ export const darkTheme = extendTheme({
     low_scale: {
       red: '#2a1c1c',
       green: '#172922',
+      yellow: '#393528',
+      purple: '#332b36',
+      orange: '#393028',
+      cyan: '#293539',
     },
   },
   fonts: {

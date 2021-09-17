@@ -38,13 +38,13 @@ export const makeServer = (): Server => {
           return paymentMethod[random];
         },
         date() {
-          return faker.date.recent();
+          return faker.date.between('2021-9-1', '2021-9-16');
         },
       }),
     },
 
     seeds(server) {
-      server.createList('transaction', 20);
+      server.createList('transaction', 5);
     },
 
     routes() {
