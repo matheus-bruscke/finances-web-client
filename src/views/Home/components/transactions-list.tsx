@@ -1,6 +1,5 @@
 import { Flex, Box, Stack, Heading, Text, IconButton } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Transaction } from '@/types';
 import { FormatedTransaction } from '../types';
 
 interface TransactionsList {
