@@ -1,6 +1,11 @@
 import { Button } from '@chakra-ui/react';
 
-export const FullButton = () => {
+interface FullButton {
+  title: string;
+  onClick(): void;
+}
+
+export const FullButton = ({ title, onClick }: FullButton) => {
   return (
     <Button
       w="full"
@@ -9,11 +14,12 @@ export const FullButton = () => {
       fontSize="lg"
       fontWeight="400"
       borderRadius="10px"
+      onClick={onClick}
       boxShadow="0 0 20px 2px #242424"
       py="2rem"
       px="4rem"
     >
-      Add new transaction
+      {title}
     </Button>
   );
 };
