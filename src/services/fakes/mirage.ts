@@ -38,7 +38,7 @@ export const makeServer = (): Server => {
           return paymentMethod[random];
         },
         date() {
-          return faker.date.between('2021-9-1', '2021-9-16');
+          return faker.date.between('2021-9-11', '2021-9-18');
         },
       }),
     },

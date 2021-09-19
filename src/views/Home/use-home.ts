@@ -17,7 +17,11 @@ export const useHome = (): UseHomeData => {
         const formatedData: FormatedTransaction = {
           ...item,
           date_formated: {
-            day: new Date(item.date).getDay(),
+            day: Number(
+              new Date(item.date).toLocaleDateString('default', {
+                day: '2-digit',
+              }),
+            ),
             month: new Date(item.date)
               .toLocaleDateString('default', {
                 month: 'long',

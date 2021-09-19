@@ -1,4 +1,4 @@
-import { Select } from '@/components/elements';
+import { FullButton, Select } from '@/components/elements';
 import { PageTemplate } from '@/components/templates';
 import { transactionsOpts } from '@/constants';
 import { Stack, Box, Heading } from '@chakra-ui/react';
@@ -17,12 +17,13 @@ export const HomeView = () => {
         />
       </Box>
 
-      <Box as={Stack} spacing={5}>
+      <Box as={Stack} spacing={5} pb={{ base: '80px' }}>
         <Select options={transactionsOpts} title="Transactions" />
+        <TransactionsList data={transactions} />
+      </Box>
 
-        <Stack spacing={2}>
-          <TransactionsList data={transactions} />
-        </Stack>
+      <Box w="calc(100% - 40px)" position="fixed" zIndex={5} bottom={5}>
+        <FullButton />
       </Box>
     </PageTemplate>
   );

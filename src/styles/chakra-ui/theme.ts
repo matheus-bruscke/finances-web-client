@@ -18,6 +18,7 @@ export const darkTheme = extendTheme({
       purple: '#332b36',
       orange: '#393028',
       cyan: '#293539',
+      blue: '#15202b',
     },
   },
   fonts: {
