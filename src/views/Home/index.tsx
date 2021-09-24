@@ -7,7 +7,7 @@ import { TransactionsList, UserBalance } from './components';
 import { useHome } from './use-home';
 
 export const HomeView = () => {
-  const { transactions } = useHome();
+  const { transactions, balance } = useHome();
   const router = useRouter();
 
   return (
@@ -15,7 +15,11 @@ export const HomeView = () => {
       <Box as={Stack} spacing={5}>
         <Heading>Home</Heading>
         <UserBalance
-          amount={{ balance: 4724.71, entries: 2547.92, exits: 1563.83 }}
+          amount={{
+            balance: balance.balance,
+            entries: balance.entries,
+            exits: balance.exits,
+          }}
         />
       </Box>
 

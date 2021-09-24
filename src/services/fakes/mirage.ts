@@ -6,7 +6,7 @@ import {
   Server,
 } from 'miragejs';
 import faker from 'faker';
-import { PaymentMethod, Transaction } from '@/types';
+import { PaymentMethod, Transaction, UserBalance } from '@/types';
 
 export const makeServer = (): Server => {
   const server = createServer({
@@ -16,6 +16,7 @@ export const makeServer = (): Server => {
 
     models: {
       transaction: Model.extend<Partial<Transaction>>({}),
+      user_balance: Model.extend<Partial<UserBalance>>({}),
     },
 
     factories: {
@@ -45,6 +46,22 @@ export const makeServer = (): Server => {
 
     seeds(server) {
       server.createList('transaction', 5);
+
+      server.create('user_balance', {
+        id: '1',
+        type: 'balance',
+        ammount: 2886.71,
+      });
+      server.create('user_balance', {
+        id: '2',
+        type: 'entries',
+        ammount: 4192.81,
+      });
+      server.create('user_balance', {
+        id: '3',
+        type: 'exits',
+        ammount: 1921.26,
+      });
     },
 
     routes() {
@@ -53,6 +70,13 @@ export const makeServer = (): Server => {
 
       this.get('/transactions', schema => {
         const response = schema.all('transaction');
+        const { models } = response;
+
+        return models;
+      });
+
+      this.get('/user-balances', schema => {
+        const response = schema.all('user_balance');
         const { models } = response;
 
         return models;

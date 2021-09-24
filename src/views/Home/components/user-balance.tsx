@@ -2,9 +2,9 @@ import { Grid, GridItem, Box, Stack, Text, Heading } from '@chakra-ui/react';
 
 interface UserBalance {
   amount: {
-    balance: number;
-    entries: number;
-    exits: number;
+    balance?: string;
+    entries?: string;
+    exits?: string;
   };
 }
 
@@ -27,7 +27,7 @@ export const UserBalance = ({ amount }: UserBalance) => {
           <Text fontWeight="medium">Balance</Text>
         </Stack>
 
-        <Heading fontSize="1.6rem">$ {amount.balance}</Heading>
+        <Heading fontSize="1.6rem">{amount.balance}</Heading>
       </GridItem>
 
       <GridItem
@@ -45,7 +45,7 @@ export const UserBalance = ({ amount }: UserBalance) => {
           </Text>
         </Stack>
 
-        <Heading fontSize="1.6rem">$ {amount.entries}</Heading>
+        <Heading fontSize="1.6rem">{amount.entries}</Heading>
       </GridItem>
 
       <GridItem
@@ -63,7 +63,7 @@ export const UserBalance = ({ amount }: UserBalance) => {
           </Text>
         </Stack>
 
-        <Heading fontSize="1.6rem">$ {amount.exits}</Heading>
+        <Heading fontSize="1.6rem">{amount.exits}</Heading>
       </GridItem>
     </Grid>
   );

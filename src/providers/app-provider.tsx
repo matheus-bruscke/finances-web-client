@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { darkTheme } from '@/styles/chakra-ui';
+import { darkTheme } from '@/theme';
 import { DisclosureProvider } from './disclosure-provider';
 import { SelectorProvider } from './selector-provider';
 
