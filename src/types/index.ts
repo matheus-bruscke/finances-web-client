@@ -1,4 +1,4 @@
 export * from './transaction';
 export * from './payment-method';
-export * from './selector';
+export * from './select-options';
 export * from './user-balance';

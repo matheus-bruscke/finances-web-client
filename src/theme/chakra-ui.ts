@@ -9,7 +9,7 @@ export const darkTheme = extendTheme({
       900: '#151515',
       800: '#141416',
       700: '#242424',
-      600: '#828282',
+      600: '#4b4944',
     },
     low_scale: {
       red: '#2a1c1c',

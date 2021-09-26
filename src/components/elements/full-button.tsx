@@ -2,10 +2,11 @@ import { Button } from '@chakra-ui/react';
 
 interface FullButton {
   title: string;
-  onClick(): void;
+  onClick?(): void;
+  type?: 'submit' | 'button';
 }
 
-export const FullButton = ({ title, onClick }: FullButton) => {
+export const FullButton = ({ title, type, onClick }: FullButton) => {
   return (
     <Button
       w="full"
@@ -14,6 +15,7 @@ export const FullButton = ({ title, onClick }: FullButton) => {
       fontSize="lg"
       fontWeight="400"
       borderRadius="10px"
+      type={type}
       onClick={onClick}
       boxShadow="0 0 20px 2px #242424"
       py="2rem"
