@@ -1,8 +1,8 @@
 import { FullButton, Select } from '@/components/elements';
 import { PageTemplate } from '@/components/templates';
 import { transactionsOpts } from '@/constants';
-import { Stack, Box, Heading } from '@chakra-ui/react';
-import { useRouter } from 'next/dist/client/router';
+import { Stack, Box, Heading, Button } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { TransactionsList, UserBalance } from './components';
 import { useHome } from './use-home';
 

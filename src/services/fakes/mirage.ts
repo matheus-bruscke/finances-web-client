@@ -81,6 +81,9 @@ export const makeServer = (): Server => {
 
         return models;
       });
+
+      this.namespace = '';
+      this.passthrough();
     },
   });
 

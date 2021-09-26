@@ -26,11 +26,11 @@ type CurrentOption = {
 };
 
 export const Select = ({ options, title }: PeriodSelector) => {
-  const { onChangeCurrentOptions, currentOptions } = useSelectorContext();
+  const { onChangeCurrentOptions } = useSelectorContext();
   const [currentOption, setCurrentOption] = useState<CurrentOption>();
 
   return (
-    <Box>
+    <Box w="auto">
       <Heading fontSize="1.5rem" fontWeight="semibold">
         {title}
       </Heading>
@@ -44,7 +44,7 @@ export const Select = ({ options, title }: PeriodSelector) => {
           fontWeight="bold"
           p="1.5rem"
           borderRadius="full"
-          color="blue.500"
+          color={currentOption?.color || options[0].color}
           _active={{ bg: { base: 'none' } }}
           _hover={{ bg: 'black' }}
         >

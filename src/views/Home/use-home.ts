@@ -1,7 +1,6 @@
 import { formatCurrency, getPayMethodStyles } from '@/helpers';
 import { getBalanceAmmount, getTransactions } from '@/services/server';
 import { Transaction, UserBalance } from '@/types';
-import { others } from '@chakra-ui/styled-system';
 import { useEffect, useState } from 'react';
 import { FormatedTransaction } from './types';
 

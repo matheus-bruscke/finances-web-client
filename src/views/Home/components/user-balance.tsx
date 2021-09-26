@@ -2,9 +2,9 @@ import { Grid, GridItem, Box, Stack, Text, Heading } from '@chakra-ui/react';
 
 interface UserBalance {
   amount: {
-    balance?: string;
-    entries?: string;
-    exits?: string;
+    balance?: string | number;
+    entries?: string | number;
+    exits?: string | number;
   };
 }
 
