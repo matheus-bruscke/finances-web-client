@@ -16,6 +16,7 @@ export const darkTheme = extendTheme({
       green: '#172922',
       yellow: '#393528',
       purple: '#332b36',
+      pink: '#F05454',
       orange: '#393028',
       cyan: '#293539',
       blue: '#15202b',
