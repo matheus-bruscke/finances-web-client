@@ -1,18 +1,18 @@
+import { LoginView } from '@/views';
 import { GetServerSideProps, NextPage } from 'next';
 import { getSession } from 'next-auth/client';
-import { HomeView } from '@/views';
 
-const HomePage: NextPage = () => <HomeView />;
+const LoginPage: NextPage = () => <LoginView />;
 
-export default HomePage;
+export default LoginPage;
 
 export const getServerSideProps: GetServerSideProps = async req => {
   const session = await getSession(req);
 
-  if (!session) {
+  if (session) {
     return {
       redirect: {
-        destination: '/login',
+        destination: '/',
         permanent: false,
       },
     };
