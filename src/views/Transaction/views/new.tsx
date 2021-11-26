@@ -35,6 +35,7 @@ export const NewTransactionView = () => {
         <InputField
           label="Description"
           name="description"
+          placeholder="Description"
           onChange={onChangeInput}
           type="string"
           value={inputsValue?.description}

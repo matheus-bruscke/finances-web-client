@@ -7,6 +7,7 @@ interface InputFild {
   name: string;
   type: 'string' | 'number' | 'email' | 'date';
   value?: string;
+  placeholder?: string;
   onChange(name: string, value: any): void;
 }
 
@@ -15,6 +16,7 @@ export const InputField = ({
   value,
   onChange,
   name,
+  placeholder,
   type,
 }: InputFild) => {
   return (
@@ -28,7 +30,7 @@ export const InputField = ({
         p="28px 20px"
         fontSize="1rem"
         onChange={e => onChange(name, e.target.value)}
-        placeholder="Description"
+        placeholder={placeholder}
         borderRadius="10px"
         size="lg"
         css={css`
