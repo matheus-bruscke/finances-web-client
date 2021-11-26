@@ -1,9 +1,11 @@
-import { useSelectorContext } from '@/hooks/contexts/use-selector';
-import { useEffect, useState } from 'react';
+import { api } from '@/apis';
+import { useSession } from 'next-auth/client';
+import { useState } from 'react';
 
 interface UseNewTransactionData {
   inputsValue: Inputs | undefined;
   onChangeInput(name: string, value: any): void;
+  handleCreateTransaction(): Promise<void>;
 }
 
 type Inputs = {
@@ -21,9 +23,24 @@ export const useNewTransaction = (): UseNewTransactionData => {
     date: new Date(),
   });
 
+  const [session] = useSession();
+
   function onChangeInput(name: string, value: any) {
     return setInputsValue({ ...inputsValue, [`${name}`]: value });
   }
 
-  return { inputsValue, onChangeInput };
+  async function handleCreateTransaction(): Promise<void> {
+    await api
+      .post('/transactions', {
+        type: inputsValue.payment_method,
+        description: inputsValue.description,
+        amount: inputsValue.value,
+        userId: session?.user?.email,
+      })
+      .then(() => {
+        alert('Transaction created was successfully');
+      });
+  }
+
+  return { inputsValue, onChangeInput, handleCreateTransaction };
 };

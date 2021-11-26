@@ -11,7 +11,8 @@ import { TransactionValueInput } from '../components';
 import { useNewTransaction } from '../hooks';
 
 export const NewTransactionView = () => {
-  const { inputsValue, onChangeInput } = useNewTransaction();
+  const { inputsValue, onChangeInput, handleCreateTransaction } =
+    useNewTransaction();
 
   return (
     <PageTemplate title="New Transaction">
@@ -28,8 +29,7 @@ export const NewTransactionView = () => {
         spacing={8}
         onSubmit={e => {
           e.preventDefault();
-          console.log(inputsValue);
-          alert('Success');
+          handleCreateTransaction();
         }}
       >
         <InputField
