@@ -16,7 +16,7 @@ interface TransactionsList {
 }
 
 export const TransactionsList = ({ data }: TransactionsList) => {
-  const fakeArray = ['1', '2', '3', '4', '5'];
+  const fakeArray = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
   return (
     <Box as={Stack} w="full" spacing={5} align="center" justify="center">
@@ -50,7 +50,11 @@ export const TransactionsList = ({ data }: TransactionsList) => {
                     <Stack direction="row" spacing={2}>
                       <Text
                         fontSize="1.2rem"
-                        color="green.400"
+                        color={
+                          transaction.formated_ammount.includes('-')
+                            ? 'red.400'
+                            : 'green.400'
+                        }
                         fontWeight="light"
                       >
                         {transaction.formated_ammount}
@@ -96,7 +100,7 @@ export const TransactionsList = ({ data }: TransactionsList) => {
             ))}
       </Stack>
 
-      {data && data?.length > 0 ? (
+      {/* {data && data?.length > 0 ? (
         <Button
           bg="low_scale.blue"
           color="blue.500"
@@ -112,7 +116,7 @@ export const TransactionsList = ({ data }: TransactionsList) => {
         </Button>
       ) : (
         <Skeleton height="35px" width="100px" borderRadius="10px" />
-      )}
+      )} */}
     </Box>
   );
 };

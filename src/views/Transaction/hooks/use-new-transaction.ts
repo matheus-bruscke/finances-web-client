@@ -1,5 +1,7 @@
 import { api } from '@/apis';
+import { useSelectorContext } from '@/hooks/contexts/use-selector';
 import { useSession } from 'next-auth/client';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 interface UseNewTransactionData {
@@ -29,17 +31,25 @@ export const useNewTransaction = (): UseNewTransactionData => {
     return setInputsValue({ ...inputsValue, [`${name}`]: value });
   }
 
+  const { currentOptions } = useSelectorContext();
+
   async function handleCreateTransaction(): Promise<void> {
-    await api
-      .post('/transaction', {
-        type: inputsValue.value > 0 ? 'income' : 'expanse',
-        description: inputsValue.description + ' ' + inputsValue.payment_method,
-        amount: inputsValue.value,
-        userId: session?.user?.email,
-      })
-      .then(() => {
-        alert('Transaction created was successfully');
-      });
+    if (session) {
+      await api
+        .post('/transaction', {
+          type: inputsValue.payment_method,
+          description: inputsValue.description,
+          amount:
+            currentOptions['New Transaction'] === 'exit'
+              ? '-' + String(inputsValue.value)
+              : inputsValue.value,
+          userId: session?.user?.email,
+        })
+        .then(() => {
+          alert('Transaction created was successfully');
+          return (window.location.href = 'http://localhost:3000/');
+        });
+    }
   }
 
   return { inputsValue, onChangeInput, handleCreateTransaction };

@@ -16,9 +16,24 @@ export const HomeView = () => {
         <Heading>Home</Heading>
         <UserBalance
           amount={{
-            balance: balance.balance,
-            entries: balance.entries,
-            exits: balance.exits,
+            balance: balance
+              ? new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(balance.total)
+              : 0,
+            entries: balance
+              ? new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(balance.deposit)
+              : 0,
+            exits: balance
+              ? new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(balance.withdraws)
+              : 0,
           }}
         />
       </Box>

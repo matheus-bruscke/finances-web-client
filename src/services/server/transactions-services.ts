@@ -1,8 +1,10 @@
 import { api } from '@/apis';
 import { Transaction } from '@/types';
 
-async function getTransactions(): Promise<Transaction[]> {
-  const response = await api.get<Transaction[]>('/transactions');
+async function getTransactions(
+  userId: string | null | undefined,
+): Promise<any> {
+  const response = await api.get<any>(`/transaction/${userId}`);
 
   return response.data;
 }
