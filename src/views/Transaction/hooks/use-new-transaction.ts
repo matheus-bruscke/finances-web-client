@@ -31,9 +31,9 @@ export const useNewTransaction = (): UseNewTransactionData => {
 
   async function handleCreateTransaction(): Promise<void> {
     await api
-      .post('/transactions', {
-        type: inputsValue.payment_method,
-        description: inputsValue.description,
+      .post('/transaction', {
+        type: inputsValue.value > 0 ? 'income' : 'expanse',
+        description: inputsValue.description + ' ' + inputsValue.payment_method,
         amount: inputsValue.value,
         userId: session?.user?.email,
       })
