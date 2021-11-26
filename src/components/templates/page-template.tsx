@@ -15,6 +15,7 @@ export const PageTemplate = ({ children, title }: PageTemplate) => {
         spacing="40px"
         py="20px"
         px={{ base: '20px', lg: 0 }}
+        w={{ lg: '100%' }}
         maxW={{ lg: '1280px' }}
         m={{ lg: '0 auto' }}
       >

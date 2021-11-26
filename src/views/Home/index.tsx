@@ -28,7 +28,13 @@ export const HomeView = () => {
         <TransactionsList data={transactions} />
       </Box>
 
-      <Box w="calc(100% - 40px)" position="fixed" zIndex={5} bottom={5}>
+      <Box
+        w="calc(100% - 40px)"
+        maxW={{ lg: '1280px' }}
+        position="fixed"
+        zIndex={5}
+        bottom={5}
+      >
         <FullButton
           title="Add new transaction"
           onClick={() => router.push('/transactions/new')}
