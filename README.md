@@ -1,8 +1,6 @@
-<p>
-<img src="./public/assets/app-logo.svg" alt="Finances" width="180">
-</p>
+# Guess or Pass
 
-> Finances is a web application developed with modern techs like Next.js and Java Spring where you can controll and mesure your expenses and earns over a given period. 
+> A battle quiz web-game 1 vs 1 for Battle Quiz LIVE content at CDT's (Chá de Trovão) Twitch channel
 
 ## 🚀 Installing the development ambient
 
@@ -23,27 +21,11 @@ This application is a study project developed by:
 
 <table>
   <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFhaJOj9bnJmQ/profile-displayphoto-shrink_200_200/0/1616089556467?e=1634774400&v=beta&t=9aR4kH1jiwZi4T45gXIYuqDjxfGec6BiKNNmoVLs-1o" width="100px;" alt="Afonso Matheus"/><br>
-        <sub>
-          <b>Afonso Matheus</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
+    <td align="center" style="padding: 15px;">
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/53308182?v=4" width="100px"; alt="Matheus Littig" /><br>
         <sub>
-          <b>Matheus Littig</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG6JLwEkdKFJw/profile-displayphoto-shrink_200_200/0/1596901973064?e=1634774400&v=beta&t=xBmM6VVcU5YoIZy4W5fAoKntV7YB8kW_BV5VvGTFSMc" width="100px" alt="Gabriel Castilho"/><br>
-        <sub>
-          <b>Gabriel Castilho</b>
+          <b>LittiNg_</b>
         </sub>
       </a>
     </td>
